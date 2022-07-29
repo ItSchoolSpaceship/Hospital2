@@ -5,9 +5,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>회원가입 페이지</title>
 </head>
 <body>
 <h1>회원가입 페이지 입니다.</h1>
+
+<input class="id_input">
+
+=>
+
+<input class="id_input" name="memberId">
+
+<form action="">
+
+=>
+
+<form id="join_form" method="post">
 </body>
 </html>

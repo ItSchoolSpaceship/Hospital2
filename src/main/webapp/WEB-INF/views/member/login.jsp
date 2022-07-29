@@ -5,9 +5,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>로그인페이지</title>
 </head>
 <body>
 <h1>로그인 페이지 입니다.</h1>
+<form>
+<input class="id_input">
+
+
+</form>
 </body>
 </html>
