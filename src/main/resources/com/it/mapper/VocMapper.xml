@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.it.mapper.VocMapper">
+<select id="getList" resultType="com.it.domain.VocVO">
+  <![CDATA[
+  select * from board where board_number > 0
+  ]]>
+
+	</select>
+
+	<insert id="insert">
+		insert into board (board_number,board_title,board_content,board_writer)
+		values (seq_board.nextval, #{board_title}, #{board_content}, #{board_writer})
+	</insert>
+
+	<insert id="insertSelectKey">
+		<selectKey keyProperty="board_number" order="BEFORE"
+			resultType="long">
+			select seq_board.nextval from dual
+		</selectKey>
+
+		insert into board (board_number,board_title,board_content,board_writer)
+		values (#{board_number},#{board_title},#{board_content},#{board_writer})
+
+	</insert>
+
+	<select id="read" resultType="com.it.domain.VocVO">
+		select * from board where board_number =#{board_number}
+	</select>
+
+	<sql id="criteria">
+		<trim prefix="(" suffix=") AND " prefixOverrides="OR">
+			<foreach item='type' collection="typeArr">
+				<trim prefix="OR">
+					<choose>
+						<when test="type == 'T'.toString()">
+							title like '%'||#{keyword}||'%'
+						</when>
+						<when test="type == 'C'.toString()">
+							content like '%'||#{keyword}||'%'
+						</when>
+						<when test="type == 'W'.toString()">
+							writer like '%'||#{keyword}||'%'
+						</when>
+					</choose>
+				</trim>
+			</foreach>
+		</trim>
+	</sql>
+
+	<select id="getListWithPaging"
+		resultType="com.it.domain.VocVO">
+  	<![CDATA[
+  		select
+  			board_number, board_title, board_content, board_writer, board_regdate, board_updatedate
+  			from
+  					(
+  					select /*+INDEX_DESC(board seq_board) */
+  						rownum rn, board_number, board_title, board_content, board_writer, board_regdate, board_updatedate
+  					from
+  						board
+  					where
+  				]]>
+
+		<include refid="criteria"></include>
+  	
+  				<![CDATA[
+  					rownum <= #{pageNum} * #{amount}
+  					)
+  				where rn > (#{pageNum}-1) * #{amount}
+  				]]>
+	</select>
+
+	<select id="getTotalCount" resultType="int">
+		select count(*) from board
+		where 
+		
+		<include refid="criteria"></include>
+		
+		board_number > 0
+	</select>
+
+	<delete id="delete">
+		delete from board where board_number = #{board_number}
+	</delete>
+
+	<update id="update">
+		update board
+		set board_title = #{board_title},
+		board_content =	#{board_content},
+		board_writer = #{board_writer},
+		board_updatedate = sysdate
+		where board_number = #{board_number}
+	</update>
+</mapper>

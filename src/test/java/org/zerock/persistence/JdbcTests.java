@@ -18,7 +18,7 @@ public class JdbcTests {
 	  Connection con = 
 	  		DriverManager.getConnection(
 	  				"jdbc:oracle:thin:@localhost:1521:XE",
-	  				"scott", "tiger");
+	  				"eyes", "tiger");
 	  
 	  log.info(con);
 	  con.close();
