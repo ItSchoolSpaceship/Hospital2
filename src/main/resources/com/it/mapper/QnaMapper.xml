@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.it.mapper.QnaMapper">
+	
+ 	<!-- 목록 -->
+ 	<select id="getList" resultType="com.it.domain.QnaVO">
+ 		
+ 		<![CDATA[
+ 			
+ 			select * from qna where qna_number > 0 
+ 		
+ 		]]>
+ 	
+ 	</select>
+ 	
+ 	 <!-- 등록  -->
+ 	 <insert id="insert">
+ 	 	
+ 	 	insert into qna(qna_number, member_id, qna_title, qna_content, qna_writer)
+ 	 	values (seq_qna.nextval, #{member_id}, #{qna_title}, #{qna_content}, #{qna_writer})
+ 	 	
+ 	 </insert>
+ 	 
+ 	 <insert id="insertSelectKey">
+ 	 
+ 	 	<selectKey keyProperty="qna_number" order="BEFORE" resultType="long">
+ 	 		select seq_qna.nextval from dual
+ 	 	</selectKey>
+ 	 	
+ 	 	insert into qna (qna_number, member_id, qna_title, qna_content, qna_writer)
+ 	 	values (#{qna_number}, #{member_id}, #{qna_title}, #{qna_content}, #{qna_writer})
+ 	 	  
+ 	 </insert>
+ 	 
+	
+	
+	<!-- 조회 -->
+	<select id="read" resultType="com.it.domain.QnaVO">
+		
+		select * from qna where qna_number = #{qna_number}
+	
+	</select>
+	
+	<!-- 삭제 -->
+	<delete id="delete">
+		
+		delete from qna where qna_number = #{qna_number}
+	
+	</delete>
+	
+	<!-- 수정 -->
+	<update id="update">
+		update qna
+		set member_id = #{member_id},
+		qna_title = #{qna_title},
+		qna_content = #{qna_content},
+		qna_writer = #{qna_writer}
+		where qna_number = #{qna_number}	
+	</update>
+	
+
+</mapper>
