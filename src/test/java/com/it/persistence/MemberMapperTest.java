@@ -20,10 +20,6 @@ public class MemberMapperTest {
 	@Autowired
 	private MemberMapper memberMapper;
 	
-	@Test
-	public void read() {
-		MemberVO vo = memberMapper.read();		
-		log.info(vo);
-	}
+
 
 }
