@@ -16,7 +16,7 @@
 			<div class="panel-heading">고객의 소리함</div>
 			<div class="panel-body">
 				<form role="form" action="/voc/register" method="post">
-				
+				<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
 					<div class="form-group">
 						<label>제목</label> <input class="form-control" name='board_title'>
 					</div>
@@ -26,7 +26,7 @@
 					</div>
 					<div class="form-group">
 						<label>작성자</label> <input class="form-control" name='board_writer'
-						 readonly="readonly">
+						 value='<sec:authentication property="principal.username"/>'readonly="readonly">
 					</div>
 					<button type="submit" class="btn btn-default">제출하기</button>
 					<button type="reset" class="btn btn-default">다시쓰기</button>

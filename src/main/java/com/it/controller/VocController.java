@@ -53,13 +53,15 @@ public class VocController {
 	  return "redirect:/voc/list";
 	  
 	  }
+	
 	@GetMapping({"/get","/modify"})
 	public void get(@RequestParam("board_number") Long board_number,
 			@ModelAttribute("cri") Criteria cri, Model model) {
 		log.info("/get of modify");
 		model.addAttribute("voc",service.get(board_number));
 	}
-	@PreAuthorize("principal.username == #board.board_writer")
+	
+	@PreAuthorize("principal.username == #voc.board_writer")
 	@PostMapping("/modify")
 	public String modify(VocVO voc, Criteria cri, RedirectAttributes rttr) {
 		log.info("modify: "+voc);
@@ -68,7 +70,7 @@ public class VocController {
 		}
 		return "redirect:/voc/list" + cri.getListLink();
 	}
-	@PreAuthorize("principal.username == #writer")
+	@PreAuthorize("principal.username == #board_writer")
 	@PostMapping("/remove")
 	public String remove(@RequestParam("board_number") Long board_number,
 			Criteria cri, RedirectAttributes rttr, String writer) {

@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 public class VocVO {
-	private long board_number;
+	private Long board_number;
 	private String board_title;
 	private String board_content;
 	private String board_writer;

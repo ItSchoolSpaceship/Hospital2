@@ -187,9 +187,9 @@
 				function(e) {
 
 					e.preventDefault();
-					actionForm.append("<input type='hidden' name='bno' value='"
+					actionForm.append("<input type='hidden' name='board_number' value='"
 							+ $(this).attr("href") + "'>");
-					actionForm.attr("action", "/board/get");
+					actionForm.attr("action", "/voc/get");
 					actionForm.submit();
 				});
 		

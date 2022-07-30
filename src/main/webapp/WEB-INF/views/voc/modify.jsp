@@ -25,37 +25,35 @@
 					<input type='hidden' name='keyword' value='<c:out value="${cri.keyword }"/>'>						
 					<div class="form-group">
 						<label>번호</label> <input class="form-control" name='board_number'
-							value='<c:out value="${board.board_number }" />' readonly="readonly">
+							value='<c:out value="${voc.board_number }" />' readonly="readonly">
 					</div>
 
 					<div class="form-group">
 						<label>제목</label> <input class="form-control" name='board_title'
-							value='<c:out value="${board.board_title }" />'>
+							value='<c:out value="${voc.board_title }" />'>
 					</div>
 
 					<div class="form-group">
 						<label>내용</label>
 						<textarea class="form-control" rows="3" name='board_content'><c:out
-								value="${board.board_content }" /></textarea>
+								value="${voc.board_content }" /></textarea>
 					</div>
 
 					<div class="form-group">
 						<label>작성자</label> <input class="form-control" name='board_writer'
-							value='<c:out value="${board.board_writer }" />'>
+							value='<c:out value="${voc.board_writer }" />'>
 					</div>
 
 					<div class="form-group">
 						<label>작성일</label> <input class="form-control" name='board_regdate'
-							value='<fmt:formatDate pattern = "yyyy/MM/dd" value="${board.
-		regdate }" />'
+							value='<fmt:formatDate pattern = "yyyy/MM/dd" value="${voc.board_regdate }" />'
 							readonly="readonly">
 					</div>
 
 					<div class="form-group">
 						<label>수정일</label> <input class="form-control"
 							name='board_updatedate'
-							value='<fmt:formatDate pattern = "yyyy/MM/dd" value="${board.
-			updateDate }" /> '
+							value='<fmt:formatDate pattern = "yyyy/MM/dd" value="${voc.board_updatedate }"/> '
 							readonly="readonly">
 					</div>
 					
@@ -63,7 +61,7 @@
 				
 				<sec:authorize access="isAuthenticated()">
 				
-				<c:if test="${pinfo.username eq board.writer }">
+				<c:if test="${pinfo.username eq voc.board_writer }">
 				
 					<button type="submit" data-oper='modify' class="btn btn-default">
 						수정하기</button>

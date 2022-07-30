@@ -19,27 +19,27 @@
 			<div class="panel-body">
 				<div class="form-group">
 					<label>번호</label> <input class="form-control" name='board_number'
-						value='<c:out value="${board.board_number }" />' readonly="readonly">
+						value='<c:out value="${voc.board_number }" />' readonly="readonly">
 				</div>
 
 				<div class="form-group">
 					<label>제목</label> <input class="form-control" name='board_title'
-						value='<c:out value="${board.board_title }" />' readonly="readonly">
+						value='<c:out value="${voc.board_title }" />' readonly="readonly">
 				</div>
 
 				<div class="form-group">
 					<label>내용</label>
 					<textarea class="form-control" rows="3" name='board_content'
-						readonly="readonly"><c:out value="${board.board_content }" /></textarea>
+						readonly="readonly"><c:out value="${voc.board_content }" /></textarea>
 				</div>
 
 				<div class="form-group">
 					<label>작성자</label> <input class="form-control" name='board_writer'
-						value='<c:out value="${board.board_writer }" />' readonly="readonly">
+						value='<c:out value="${voc.board_writer }" />' readonly="readonly">
 				</div>
 				<sec:authentication property="principal" var="pinfo"/>
 					<sec:authorize access="isAuthenticated()">
-					<c:if test="${pinfo.username eq board.board_writer }">
+					<c:if test="${pinfo.username eq voc.board_writer }">
 					<button data-oper='modify' class="btn btn-default">Modify</button>
 					</c:if>
 				</sec:authorize>
