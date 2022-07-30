@@ -1,6 +1,8 @@
 package com.it.controller;
 
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +15,7 @@ import lombok.extern.log4j.Log4j;
 
 
 @Controller
-@RequestMapping("/member")
+@RequestMapping("/member/*")
 @Log4j
 public class MemberContoroller {
 	
@@ -35,6 +37,13 @@ public class MemberContoroller {
 	public String logindo(MemberVO member) {
 		service.memberRegister(member);
 		return "redirect:/member/login";
+	}
+	
+	//권한없음
+	@GetMapping("/accessError")
+	public void accessDenied(Authentication auth) {
+		log.info("access Denied :" + auth);
+		
 	}
 	
 	

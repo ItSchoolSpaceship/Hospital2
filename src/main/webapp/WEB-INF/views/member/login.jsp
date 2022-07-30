@@ -9,10 +9,18 @@
 </head>
 <body>
 <h1>로그인 페이지 입니다.</h1>
-<form>
-<input class="id_input">
-
-
+<form method='post' action="/login">
+<div>
+	<input type='text' name='username' value='admin'>
+</div>
+<div>
+	<input type='password' name='password' value='admin'>
+</div>
+<div>
+	<input type='submit'>
+</div>
+<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />
 </form>
+
 </body>
 </html>
