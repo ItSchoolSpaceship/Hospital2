@@ -70,7 +70,7 @@ public class VocController {
 		}
 		return "redirect:/voc/list" + cri.getListLink();
 	}
-	@PreAuthorize("principal.username == #board_writer")
+	@PreAuthorize("principal.username == #voc.board_writer")
 	@PostMapping("/remove")
 	public String remove(@RequestParam("board_number") Long board_number,
 			Criteria cri, RedirectAttributes rttr, String writer) {
