@@ -59,10 +59,10 @@
   			board_number, board_title, board_content, board_writer, board_regdate, board_updatedate
   			from
   					(
-  					select /*+INDEX_DESC(board seq_board) */
-  						rownum rn, board_number, board_title, board_content, board_writer, board_regdate, board_updatedate
-  					from
-  						board
+  					select /*+ INDEX_DESC(board pk_board)*/
+ 						rownum rn, board_number, board_title, board_content, board_writer, board_regdate, board_updatedate
+					from
+ 						board
   					where
   				]]>
 

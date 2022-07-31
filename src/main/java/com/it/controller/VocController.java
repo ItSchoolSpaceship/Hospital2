@@ -73,7 +73,7 @@ public class VocController {
 	@PreAuthorize("principal.username == #voc.board_writer")
 	@PostMapping("/remove")
 	public String remove(@RequestParam("board_number") Long board_number,
-			Criteria cri, RedirectAttributes rttr, String writer) {
+			Criteria cri, RedirectAttributes rttr, String board_writer) {
 		log.info("remove..." + board_number);
 		if(service.remove(board_number)) {
 			rttr.addFlashAttribute("result", "success");

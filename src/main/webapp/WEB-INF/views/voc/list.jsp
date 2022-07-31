@@ -3,18 +3,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ include file="../includes/header.jsp"%>
-<div class="row">
-	<div class="col-lg-12">
-		<h1 class="page-header">고객의 소리</h1>
-	</div>
-	<!-- /.col-lg-12 -->
-</div>
+
+
+
 <!-- /.row -->
 <div class="row">
 	<div class="col-lg-12">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h7>고객의 소리함</h7>
+				<h6>고객의 소리함</h6>
 				<button id='regBtn' type="button" class="btn btn-xs pull-right">
 					작성하기</button>
 			</div>
@@ -202,4 +199,14 @@
 		});
 
 </script>
+<script>
+		$(document).ready(function() {
+		$('#dataTables-example').DataTable({ responsive: true});
+		$(".sidebar-nav")
+			.attr("class", "sidebar-nav navbar-collapse collapse")
+			.attr("aria-expanded", 'false')
+			.attr("style", "height:1px");
+		});
+	</script>
+	
 <%@ include file="../includes/footer.jsp"%>

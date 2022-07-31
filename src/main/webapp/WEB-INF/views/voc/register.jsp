@@ -4,11 +4,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <%@ include file="../includes/header.jsp"%>
-<div class="row">
-	<div class="col-lg-12">
-		<h1 class="page-header">고객의 소리</h1>
-	</div>
-</div>
 
 <div class="row">
 	<div class="col-lg-12">

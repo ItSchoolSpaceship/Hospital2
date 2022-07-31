@@ -27,12 +27,12 @@ public class MemberServiceImpl {
 		return mapper.read(id);
 	}
 	
-	public void memberUpdate(MemberVO member) {
+	/*public void memberUpdate(MemberVO member) {
 		
 	}
 	
 	public void memberDelete(String id) {
 		
-	}
+	}*/
 
 }
