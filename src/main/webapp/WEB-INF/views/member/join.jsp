@@ -10,16 +10,46 @@
 <body>
 <h1>회원가입 페이지 입니다.</h1>
 
-<input class="id_input">
+<form action="join" method="post">
+<table>
+	<tr>
+		<th>아이디</th>
+		<td><input type="text" name="member_id"> <input type="button" value="중복확인"></td>
+		
+	</tr>
+	<tr>
+		<th>비밀번호</th>
+		<td><input type="password" name="pwd"></td>
+	</tr>
+	<tr>
+		<th>비밀번호 확인</th>
+		<td><input type="password" name="pwd"></td>
+	</tr>
+	<tr>
+		<th>이름</th>
+		<td><input type="text" name="name"></td>
+	</tr>
+	<tr>
+		<th>생년월일</th>
+		<td><input type="text" name="birth"></td>
+	</tr>
+	<tr>
+		<th>주소</th>
+		<td><input type="text" name="address"></td>
+	</tr>
+	<tr>
+		<th>이메일</th>
+		<td><input type="text" name="email"></td>
+	</tr>
+	<tr>
+		<th>전화번호</th>
+		<td><input type="text" name="phone"></td>
+	</tr>
+</table>
+	<input type="submit" value="회원가입하기">
+	<input type="button" value="취소">
 
-=>
+</form>
 
-<input class="id_input" name="memberId">
-
-<form action="">
-
-=>
-
-<form id="join_form" method="post">
 </body>
 </html>

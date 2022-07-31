@@ -1,6 +1,6 @@
 *.class
-target/
-*.settings/
+*/target/*
+.settings
 
 # Eclipse Core
 *.project

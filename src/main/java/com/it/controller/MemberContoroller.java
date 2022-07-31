@@ -46,6 +46,12 @@ public class MemberContoroller {
 		
 	}
 	
+	@GetMapping("/logout")
+	public String logout() {
+		log.info("logout");
+		return "home";
+	}
+	
 	
 
 }
