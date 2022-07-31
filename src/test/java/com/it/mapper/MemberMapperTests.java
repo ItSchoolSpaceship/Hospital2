@@ -31,7 +31,7 @@ public class MemberMapperTests {
 		
 		memberMapper.insert(member);
 	}
-	
+/*	
 	@Test
 	public void getList() throws Exception{
 		memberMapper.List();
@@ -40,7 +40,7 @@ public class MemberMapperTests {
 	@Test
 	public void delete() throws Exception{
 		memberMapper.delete(6L);
-	}
+	}*/
 	
 	@Test
 	public void update() throws Exception{

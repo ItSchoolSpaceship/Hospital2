@@ -2,6 +2,14 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+
+<sec:authorize access="isAuthenticated()">
+	<sec:authentication property="principal" var="principal" />
+</sec:authorize>
+
+<!-- [출처] [Spring Security] #6 스프링부트 회원가입 및 로그인하기 - View 연결하기, 로그인 세션 정보 확인, Security taglibs|작성자 sosow0212 -->
+
 
 <%@include file="../includes/header.jsp" %>
 
@@ -16,13 +24,15 @@
 			<div>
 			
              <form role="form" action="/rsv/register" method="post" align="center" >
+             <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }"/>
              	<div class="form-group" >
              		<label>아이디</label>
-             		<input class="form-control1" name="member_id" >
-             	</div>
+ 					 <input class="form-control1" name="member_id" >
+ <%--  					<input type="text" name="member_id" placeholder="이름" value="${principal.MemberVo.member_id }"> --%>
+             	</div> 
              	<div class="form-group">
              		<label>증상</label>
-             		<textarea class="form-control" rows="3" name="reservation_sympton"></textarea>                            	
+             		<textarea class="form-control1" rows="3" name="reservation_sympton"></textarea>                            	
              	</div>
              
              	<button type="submit" class="btn btn-default" >Submit Button</button>

@@ -32,12 +32,12 @@ public class MemberContoroller {
 	public void loginGet() {
 		
 	}
-	//회원가입
+	/*	//회원가입
 	@PostMapping("/join")
 	public String logindo(MemberVO member) {
 		service.memberRegister(member);
 		return "redirect:/member/login";
-	}
+	}*/
 	
 	//권한없음
 	@GetMapping("/accessError")
