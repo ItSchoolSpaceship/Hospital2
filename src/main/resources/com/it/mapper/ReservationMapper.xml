@@ -73,7 +73,10 @@
   					rownum <= #{pageNum} * #{amount}
   					)
   				where rn > (#{pageNum}-1) * #{amount}
+<<<<<<< HEAD
   				order by reservation_number desc
+=======
+>>>>>>> master
   				]]>
 	</select>
 	<select id="getTotalCount" resultType="int">

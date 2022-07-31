@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 지도 생성하기 </title>
+</head>
+	<body>
+		<style>
+	    #map{
+	        margin:0 auto;
+	        width:400px;
+	        height:400px;
+    	}
+		</style>
+		<!-- head -->
+	<div class ="fix-layout">
+		<div class -"title">
+			<strong> OO 병원 오시는 길</strong>
+		</div>
+	</div> 			
+		<!-- 지도를 표시할 div 입니다 -->
+	<div id = "map" style = "width:100%;height:350px;">
+		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	c44d4198ac9ab573703aa78418110c1b"></script>
+		<script>
+		var mapContainer = document.getElementById('map'),     // 지도를 표시할 div 
+    	mapOption = { 
+        center: new kakao.maps.LatLng(33.450701, 126.570667),  // 지도의 중심좌표
+        level: 4 };                                            // 지도의 확대 레벨    
+   
+		<div class = "fix-layout pb50">
+			<d1 class = "traffic-box"> == $0
+				<dt>
+				<img src = "/C:\Users\KITT\Desktop\image/traffic_01.png"
+				alt = "지하철 이용시">
+				</dt>
+				<dd>
+				<p class = "tlt"> SUBWAY </p>
+				<span> 용문역 5번 출구 OO빌딩 7층 </span>
+			</d1>
+			
+		<div class = "fix-layout pb50">
+			<d1 class = "traffic-box"> == $0
+				<dt>
+				<img src = "/C:\Users\KITT\Desktop\image/traffic_02.png"
+				alt = "버스 이용시">
+				</dt>
+				<dd>
+				<p class = "tlt"> BUS </p>
+				<span> 정류장명 : 용문역 사거리 하차 후 OO빌딩 7층 </span>
+			</d1>
+			
+		<div class = "fix-layout pb50">
+			<d1 class = "traffic-box"> == $0
+				<dt>
+				<img src = "/C:\Users\KITT\Desktop\image/traffic_03.png"
+				alt = "버스 이용시">
+				</dt>
+				<dd>
+				<p class = "tlt"> BUS </p>
+				<span> Parking 가능  </span>
+			</d1>	
+				
+
+	// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+	var map = new kakao.maps.Map(mapContainer, mapOption); 
+		</script>
+	</body>
+</html>
