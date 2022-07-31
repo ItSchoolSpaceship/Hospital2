@@ -30,7 +30,7 @@
 	</insert>
 	
 	<select id="read" resultType="com.it.domain.MemberVO">
-		select * from member where member_number = #{member_number}
+		select * from member where member_id = #{member_id}
 	</select>
 	
 	<delete id="delete">

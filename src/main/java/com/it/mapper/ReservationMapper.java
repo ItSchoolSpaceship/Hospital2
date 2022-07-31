@@ -12,8 +12,8 @@ public interface ReservationMapper {
 	public List<ReservationVO> getList();
 	
 	public ReservationVO read(Long reservation_number);
-	
-	public List<ReservationVO> readId(String userid);
+	public ReservationVO readId(String member_id);
+
 	
 	public List<ReservationVO> getListWithPaging(Criteria cri);
 

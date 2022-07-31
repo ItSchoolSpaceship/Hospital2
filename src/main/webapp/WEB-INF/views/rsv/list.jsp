@@ -18,7 +18,7 @@ $(".move").on(
 				function(e) {
 
 					e.preventDefault();
-					actionForm.append("<input type='hidden' name='reservation_number' value='"
+					actionForm.append("<input type='hidden' name='member_id' value='"
 							+ $(this).attr("href") + "'>");
 					actionForm.attr("action", "/rsv/detailPage");
 					actionForm.submit();
@@ -28,27 +28,35 @@ $(".move").on(
 </head>
 <body>
 	<h1 align="center">예약 페이지</h1>
-	<table border="1"  align="center">
+	<table border="1" align="center" >
 		<tr align="center">
 			<td width="10%">예약번호</td>
 			<td width="20%">아이디</td>
 			<td width="20%">예약날짜</td>
 			<td width="20%">시간</td>
 			<td width="20%">증상</td>
+			<td width="20%">수정 삭제</td>
+			
+		
 		</tr>
 		
 		
 			<c:forEach items="${list }" var="board">
-						<tr>
-							<td><c:out value="${board.reservation_number }" /></td>
-							<td><a class='move' href='<c:out value="/rsv/detailPage?member_id=${board.reservation_number }"/>'>
-									<c:out value="${board.member_id }" /></a></td>
-							<td><c:out value="${board.reservation_date }" /></td>
-							<td><fmt:formatDate pattern="yyyy-MM-dd"
-									value="${board.reservation_time }" /></td>
-							<td><c:out value="${board.reservation_sympton }" /></td>
-						</tr>
-					</c:forEach>
+				<tr>
+					<td><c:out value="${board.reservation_number }" /></td>
+					<td><a class='move' href='<c:out value="/rsv/detailPage?member_id=${board.member_id }"/>'>
+							<c:out value="${board.member_id }" /></a></td>
+					<td><c:out value="${board.reservation_date }" /></td>
+					<td><fmt:formatDate pattern="yyyy-MM-dd"
+							value="${board.reservation_time }" /></td>
+					<td><c:out value="${board.reservation_sympton }" /></td>
+						<td align="center">
+		<a href="/board/modify?board_number=
+		${view.bno }"> 수정</a>, <a href="/board/delete?board_number=
+		${view.bno }"> 삭제</a>
+		</td>
+				</tr>
+			</c:forEach>
 		
 				<%-- <table width="100%"
 					class="table table-striped table-bordered table-hover">

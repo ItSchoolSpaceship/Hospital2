@@ -22,13 +22,17 @@ public class ReservationServiceImpl {
 	@Autowired
 	
 	private ReservationMapper mapper;
-	private MemberMapper mapper2;
+
 	public void register(ReservationVO reservation) {
 		mapper.insertSelectKey(reservation);
 	}
 	
 	public ReservationVO get(Long reservation_number) {
 		return mapper.read(reservation_number);
+	}
+	
+	public ReservationVO getID(String member_id) {
+		return mapper.readId(member_id);
 	}
 	
 	public boolean modify(ReservationVO reservation) {
@@ -47,7 +51,7 @@ public class ReservationServiceImpl {
 		return mapper.getTotalCount(cri);
 	}
 	
-	public Map<String, List> getMyCartItem(String member_id)
+/*	public Map<String, List> getReservList(String member_id)
 	{
 		Map<String, List> dataMap = new HashMap<>();
 		List<ReservationVO> reservation = mapper.readId(member_id);
@@ -70,7 +74,7 @@ public class ReservationServiceImpl {
 			
 			return member;
 	
-	}
+	}*/
 
 
 }
