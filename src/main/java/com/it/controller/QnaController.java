@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -32,11 +33,16 @@ public class QnaController {
 		if(service.remove(qna_number)) {
 			rttr.addFlashAttribute("result", "seccess");
 		}
-		
 		return "redirect:/qna/list";
 	}
 	
-	
+	@GetMapping({"/get", "/modify"})
+	public void get(@RequestParam("qna_number") Long qna_number, Model model) {
+		
+		log.info("/get or modify");
+		model.addAttribute("qna", service.get(qna_number));
+	}
+
 	// 수정
 	@PostMapping("/modify")
 	public String modify(QnaVO qna, RedirectAttributes rttr) {
@@ -50,18 +56,10 @@ public class QnaController {
 		return "redirect:/qua/list";
 	}
 	
-	
-	
-	
-	@GetMapping({"/get", "/modify"})
-	public void get(@RequestParam("qna_number") Long qna_number, Model model) {
+	@GetMapping("/register")
+	public void register() {
 		
-		log.info("/get or modify");
-		model.addAttribute("qna_number", service.get(qna_number));
 	}
-	
-	
-	
 	
 	// 등록
 	@PostMapping("/register")
@@ -71,15 +69,12 @@ public class QnaController {
 		
 		service.register(qna);
 		
-		rttr.addFlashAttribute("result", qna.getMember_id());
+		rttr.addFlashAttribute("result", qna.getQna_number());
 		
 		return "redirect:/qna/list";
 	}
 	
-	@GetMapping("/register")
-	public void register() {
-		
-	}
+	
 	
 	
 	
