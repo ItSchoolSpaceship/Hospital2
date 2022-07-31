@@ -7,13 +7,13 @@
 
 <div class="row">
 	<div class="col-lg-12">
-		<h1 class="page-header">Board Modify</h1>
+		<h1 class="page-header">고객의 소리</h1>
 	</div>
 </div>
 <div class="row">
 	<div class="col-lg-12">
 		<div class="panel panel-default">
-			<div class="panel-heading">Board Modify</div>
+			<div class="panel-heading">고객의소리 게시글</div>
 			<div class="panel-body">
 
 				<form role="form" action="/voc/modify" method="post">

@@ -16,7 +16,7 @@
 			<div class="panel-heading">
 				<h7>고객의 소리함</h7>
 				<button id='regBtn' type="button" class="btn btn-xs pull-right">
-					writer</button>
+					작성하기</button>
 			</div>
 			<!-- /.panel-heading -->
 			<div class="panel-body">
@@ -77,19 +77,7 @@
 
 				<div class="pull-right">
 					<ul class="pagination">
-						<%-- <c:if test="${pageMaker.prev }">
-							<li class="paginate_button previous"><a href="#">Previous</a></li>
-						</c:if>
-
-						<c:forEach var="num" begin="${pageMaker.startPage }"
-							end="${pageMaker.endPage }">
-							<li class="paginate_button"><a href="#">${num }</a></li>
-						</c:forEach>
-
-						<c:if test="${pageMaker.next }">
-							<li class="paginate_button next"><a href="#">Next</a></li>
-						</c:if> --%>
-
+						
 						<c:if test="${pageMaker.prev }">
 							<li class="paginate_button previous"><a
 								href="${pageMaker.startPage -1 }">Previous</a></li>
@@ -126,14 +114,13 @@
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal"
 								aria-hidden="true">&times;</button>
-							<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+							<h4 class="modal-title" id="myModalLabel">알림창</h4>
 						</div>
 						<div class="modal-body">처리가 완료되었습니다</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default"
 								data-dismiss="modal">Close</button>
-							<button type="button" class="btn btn-primary">Save
-								changes</button>
+							
 						</div>
 					</div>
 				</div>

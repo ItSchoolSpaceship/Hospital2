@@ -39,12 +39,12 @@ public class VocMapperTests {
 	 
 	@Test
 	public void testInsertSelectKey() {
-		VocVO vo = new VocVO();
-		vo.setBoard_title("배액");
-		vo.setBoard_writer("배애액");
-		vo.setBoard_content("배애액");
-		mapper.insertSelectKey(vo);
-		log.info(vo);
+		VocVO voc = new VocVO();
+		voc.setBoard_title("배액");
+		voc.setBoard_writer("배애액");
+		voc.setBoard_content("배애액");
+		mapper.insertSelectKey(voc);
+		log.info(voc);
 	}
 	@Test
 	public void testRead() {

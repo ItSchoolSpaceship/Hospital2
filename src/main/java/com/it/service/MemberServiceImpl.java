@@ -1,15 +1,14 @@
 package com.it.service;
 
-
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.it.domain.MemberVO;
 import com.it.mapper.MemberMapper;
 
+import lombok.extern.log4j.Log4j;
 
+@Log4j
 @Service
 public class MemberServiceImpl {
 
@@ -20,25 +19,20 @@ public class MemberServiceImpl {
 		this.mapper = mapper;
 	}
 	
-	public void memberRegister(MemberVO member) {
+	public void memberInsert(MemberVO member) {
 		mapper.insert(member);
 	}
 	
-	public List<MemberVO> memberList() {
-		return mapper.List();
+	public MemberVO memberSelect(String id) {
+		return mapper.read(id);
 	}
 	
-	public void memberModify(MemberVO member) {
-		mapper.update(member);
+	public void memberUpdate(MemberVO member) {
+		
 	}
 	
-	public void memberRemove(Long memberNumber) {
-		mapper.delete(memberNumber);
+	public void memberDelete(String id) {
+		
 	}
-	
-	
-	
-	
-	
 
 }
