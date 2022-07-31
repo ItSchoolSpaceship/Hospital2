@@ -22,7 +22,7 @@ public class MemberMapperTest {
 	
 	@Test
 	public void read() {
-		MemberVO vo = memberMapper.read();		
+		MemberVO vo = memberMapper.read("aaa");		
 		log.info(vo);
 	}
 

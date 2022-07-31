@@ -6,11 +6,99 @@
 
 	<select id="getList" resultType="com.it.domain.ReservationVO">
   <![CDATA[
-  select * from tbl_board where bno > 0
+  select * from reservation  > 0
   ]]>
   </select>
 	<insert id="insert">
 		insert into reservation (reservation_number,member_id,reservation_sympton)
 		values (seq_reservation.nextval, #{member_id}, #{reservation_sympton})
 	</insert>
+	<insert id="insertSelectKey">
+		<selectKey keyProperty="reservation_number" order="BEFORE"
+		 resultType="long">
+		  select seq_reservation.nextval from dual
+		 </selectKey>
+		 insert into reservation (reservation_number,member_id,reservation_sympton)
+		 values(#{reservation_number},#{member_id},#{reservation_sympton})
+		 
+	</insert>
+	
+	<select id="read" resultType="com.it.domain.ReservationVO">
+ 		select * from reservation where reservation_number=
+		#{reservation_number}
+		
+	</select>
+		<select id="readId" resultType="com.it.domain.ReservationVO">
+ 		select * from reservation where member_id=
+		#{member_id}
+		
+	</select>
+	<sql id="criteria">
+		<trim prefix="(" suffix=") AND " prefixOverrides="OR">
+			<foreach item='type' collection="typeArr">
+				<trim prefix="OR">
+					<choose>
+						<when test="type == 'T'.toString()">
+							title like '%'||#{keyword}||'%'
+						</when>
+						<when test="type == 'C'.toString()">
+							content like '%'||#{keyword}||'%'
+						</when>
+						<when test="type == 'W'.toString()">
+							writer like '%'||#{keyword}||'%'
+						</when>
+					</choose>
+				</trim>
+			</foreach>
+		</trim>
+	</sql>
+	<select id="getListWithPaging"
+		resultType="com.it.domain.ReservationVO">
+  	<![CDATA[
+  		select
+  			reservation_number,member_id, reservation_date, reservation_time,reservation_sympton
+  			from
+  					(
+  					select /*+INDEX_DESC(reservation seq_reservation) */
+  						rownum rn, reservation_number,member_id, reservation_date, 
+  						reservation_time,reservation_sympton
+  					from
+  						reservation
+  					where
+  				]]>
+
+		<include refid="criteria"></include>
+  	
+  				<![CDATA[
+  					rownum <= #{pageNum} * #{amount}
+  					)
+  				where rn > (#{pageNum}-1) * #{amount}
+  				order by reservation_number desc
+  				]]>
+	</select>
+	<select id="getTotalCount" resultType="int">
+		select count(*) from reservation
+		where 
+		
+		<include refid="criteria"></include>
+		
+		reservation_number > 0
+	</select>
+	
+	<delete id="delete">
+		delete from reservation where reservation_number = #{reservation_number}
+	</delete>
+
+	<update id="update">
+		update reservation
+		set member_id =
+		#{member_id},
+		reservation_sympton =
+		#{reservation_sympton},
+		reservation_date =
+		sysdate
+		where reservation_number =
+		#{reservation_number}
+		
+	</update>
 </mapper>

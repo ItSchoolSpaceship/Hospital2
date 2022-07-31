@@ -24,7 +24,7 @@ public class MemberServiceImpl {
 	}
 	
 	public MemberVO memberSelect(String id) {
-		return null;
+		return mapper.read(id);
 	}
 	
 	public void memberUpdate(MemberVO member) {
@@ -34,9 +34,5 @@ public class MemberServiceImpl {
 	public void memberDelete(String id) {
 		
 	}
-	
-	
-	
-	
 
 }
