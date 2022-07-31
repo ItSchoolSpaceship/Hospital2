@@ -12,9 +12,9 @@ public interface ReservationMapper {
 	public List<ReservationVO> getList();
 	
 	public ReservationVO read(Long reservation_number);
+	
 	public ReservationVO readId(String member_id);
 
-	
 	public List<ReservationVO> getListWithPaging(Criteria cri);
 
 	public int getTotalCount(Criteria cri);

@@ -53,7 +53,7 @@ public class ReservationController {
 		model.addAttribute("detail", cartMap);
 	}*/
 	
-	@PostMapping("/detailPage")
+	@GetMapping("/detailPage")
 	public void detailPage(@RequestParam("member_id") String member_id, 
 			 Model model) {
 		log.info("ID: "+member_id);
@@ -80,7 +80,7 @@ public class ReservationController {
 		rService.register(reservation);
 		rttr.addFlashAttribute("result", reservation.getReservation_number());
 
-		return "redirect:/rsv/list";
+		return "redirect:/rsv/detailPage";
 	}
 
 }

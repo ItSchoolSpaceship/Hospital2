@@ -4,29 +4,16 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<script type="text/javascript">
-$(function(){
+<%@include file="../includes/header.jsp" %>
+
+<style>
+	#test-whiteline{
+		color : white;
+	}
+</style>
 	
-
-$(".move").on(
-				"click",
-				function(e) {
-
-					e.preventDefault();
-					actionForm.append("<input type='hidden' name='member_id' value='"
-							+ $(this).attr("href") + "'>");
-					actionForm.attr("action", "/rsv/detailPage");
-					actionForm.submit();
-				});
-})
-</script>
-</head>
-<body>
+	<h2 id="test-whiteline">text</h2>
+	<div>
 	<h1 align="center">예약 페이지</h1>
 	<table border="1" align="center" >
 		<tr align="center">
@@ -90,5 +77,9 @@ $(".move").on(
 	private String reservation_sympton; -->
 		</tr>
 	</table>
+	</div>
 </body>
-</html>
+
+<h1> </h1>
+<h1 id="test-whiteline">Test</h1>
+<%@include file="../includes/footer.jsp" %>
