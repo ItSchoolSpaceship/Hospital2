@@ -1,6 +1,7 @@
 package com.it.domain;
 
 import java.util.Date;
+import java.util.List;
 
 import lombok.Data;
 
@@ -15,5 +16,7 @@ public class MemberVO {
 	private String member_address;
 	private String member_email;
 	private String member_phone;
+	private List<AuthVO>authList;
+	
 	
 }
