@@ -50,6 +50,10 @@ public class ReservationServiceImpl {
 	public int getTotal(Criteria cri) {
 		return mapper.getTotalCount(cri);
 	}
+
+	
+	
+	
 	
 /*	public Map<String, List> getReservList(String member_id)
 	{

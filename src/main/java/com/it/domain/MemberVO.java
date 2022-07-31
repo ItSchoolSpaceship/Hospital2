@@ -18,5 +18,4 @@ public class MemberVO {
 	private String member_phone;
 	private List<AuthVO>authList;
 	
-	
 }
