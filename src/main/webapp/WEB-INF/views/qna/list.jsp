@@ -92,7 +92,7 @@
   </style>
 </head>
 <body>
-<h1>목록페이지입니다.</h1>
+<h1>QnA 목록페이지</h1>
 
 <div class="table_wrap">
 	<a href="/qna/register" class="top_btn">QnA 등록</a>
@@ -106,6 +106,7 @@
 				<th class="member_id_width">수정일</th> -->
 			</tr>
 		</thead>
+		
 		<c:forEach items="${list}" var="list">
 			<tr>
 				<td><c:out value="${list.qna_number}"/></td>
@@ -121,7 +122,7 @@
 		</c:forEach>	
 	</table>
 		
-	<div class="search_wrap">
+  <div class="search_wrap">
 		<div class="search_area">
 			<select name="type">
 				<option value="" <c:out value="${pageMaker.cri.type == null?'selected':'' }"/>>--</option>
@@ -135,9 +136,10 @@
 			<input type="text" name="keyword" value="${pageMaker.cri.keyword }">
 			<button>Search</button>
 		</div>
-	</div>		
-		
-	<div class="pageInfo_wrap" >
+	</div>		  
+	
+	 	
+   <div class="pageInfo_wrap" >
 		<div class="pageInfo_area">
 			<ul id="pageInfo" class="pageInfo">
 			
@@ -158,16 +160,16 @@
 				
 			</ul>
 		</div>
-	</div>
+	</div>  
 	
 
 	
-	<form id="moveForm" method="get">	
+  <form id="moveForm" method="get">	
 		<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
 		<input type="hidden" name="amount" value="${pageMaker.cri.amount }">
 		<input type="hidden" name="keyword" value="${pageMaker.cri.keyword }">	
 		<input type="hidden" name="type" value="${pageMaker.cri.type }">	
-	</form>
+	</form>  
 </div>
 
 <script>

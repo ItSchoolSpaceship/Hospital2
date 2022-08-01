@@ -40,7 +40,7 @@ public class QnaServiceTests {
 	@Test // 수정
 	public void testUpdate() {
 		
-		QnaVO qna = service.get(7L);
+		QnaVO qna = service.get(6L);
 		
 		if(qna == null) {
 			

@@ -58,9 +58,17 @@ textarea{
 <body>
 <h1>QnA 페이지</h1>
 	<form id="modifyForm" action="/qna/modify" method="post">
+	
+	
 	<div class="input_wrap">
 		<label>번호</label>
 		<input name="qna_number" readonly="readonly" value='<c:out value="${qna.qna_number}"/>' >
+	</div>
+	
+	<div class="input_wrap">
+		<label>member_id</label>
+		<input name="member_id"  value='<c:out value="${qna.member_id}"/>'>
+	
 	</div>
 	
 	<div class="input_wrap">
@@ -98,10 +106,12 @@ textarea{
 	</form>
 	<form id="infoForm" action="/qna/modify" method="get">
 		<input type="hidden" id="qna_number" name="qna_number" value='<c:out value="${qna.qna_number}"/>'>
-		<input type="hidden" name="pageNum" value='<c:out value="${cri.pageNum}"/>'>
+		
+		<%-- <input type="hidden" name="pageNum" value='<c:out value="${cri.pageNum}"/>'>
 		<input type="hidden" name="amount" value='<c:out value="${cri.amount}"/>'>
 		<input type="hidden" name="type" value="${cri.type }">	
-		<input type="hidden" name="keyword" value="${cri.keyword }">	
+		<input type="hidden" name="keyword" value="${cri.keyword }"> --%>
+			
 	</form>
 
 <script>
