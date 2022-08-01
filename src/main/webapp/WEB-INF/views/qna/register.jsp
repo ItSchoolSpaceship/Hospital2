@@ -9,21 +9,21 @@
 </head>
 <body>
 	<h1>QnA 등록</h1>
-	<form action="/qna/register" method="post">
+	<form role="form" action="/qna/register" method="post">
 	
 		<div class="input_wrap">
 			<label>Title</label>
-			<input name="title">
+			<input name="qna_title">
 		</div>
 		
 		<div class="input_wrap">
 			<label>Content</label>
-			<textarea rows="3" name="content"></textarea>
+			<textarea rows="3" name="qna_content"></textarea>
 		</div>
 		
 		<div class="input_wrap">
 			<label>Writer</label>
-			<input name="writer">
+			<input name="qna_writer">
 		</div>
 		
 		<button type="submit" class="btn">등록</button>

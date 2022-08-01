@@ -1,5 +1,6 @@
 package com.it.mapper;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ import lombok.extern.log4j.Log4j;
 public class MemberMapperTests {
 
 	@Autowired
-	private MemberMapper memberMapper;
+	private MemberMapper mapper;
 	
 	@Test
 	public void insert() throws Exception{
@@ -29,7 +30,7 @@ public class MemberMapperTests {
 		member.setMember_email("test");
 		member.setMember_phone("test");
 		
-		memberMapper.insert(member);
+		mapper.insert(member);
 	}
 /*	
 	@Test
@@ -53,6 +54,13 @@ public class MemberMapperTests {
 		member.setMember_email("w2");
 		member.setMember_phone("010");
 		
-		memberMapper.update(member);
+		mapper.update(member);
+	}
+	
+	@Test
+	public void testRead() {
+		MemberVO vo = mapper.read("admin90");
+		log.info(vo);
+		vo.getAuthList().forEach(authVO -> log.info(authVO));
 	}
 }
