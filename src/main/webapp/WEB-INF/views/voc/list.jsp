@@ -4,17 +4,97 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ include file="../includes/header.jsp"%>
 
+<head>
+	<style>
+	
+/* 	<section> 
+	.div.panel-heading {
+	position: relative;
+    width: 100%;
+    display: block;
+    padding:105px 0;
+    } */
+  
+   
+    .ftco-section {
+    position: relative;
+    width: 100%;
+    display: block;
+	}
 
+	.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+	}
+	
+    h6 {
+	font-size: 30px;
+    font-weight: 400;
+    background: #2f89fc;
+    background: linear-gradient(135deg, #2f89fc 0%, #2cbcbc 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2f89fc', endColorstr='#00dc94', GradientType=1 );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem !important;
+   
+    }
+ 	
+ 	p {
+ 	 margin-bottom: 1.5rem !important;
+ 	}
+ 	
+ 	th {
+ 	text-align: center;
+ 	}
+ </style>
+</head>
 
 <!-- /.row -->
-<div class="row">
+
+<section class - "ftco-section">
+<div class="container">
+	<div class="row">
 	<div class="col-lg-12">
+	 <div class-"row justify-content-center mb-6 pb-5">
 		<div class="panel panel-default">
+		 <div class="col-md-7 text-center heading-section ftco-animate">
+			<div class="ftco-section">	
 			<div class="panel-heading">
-				<h6>고객의 소리함</h6>
+				<h6>고객의 소리를 귀담아 듣겠습니다</h6>
+				<p> 불편사항이나 개선사항을 말씀해주시면 반영하겠습니다. </p>
 				<button id='regBtn' type="button" class="btn btn-xs pull-right">
-					작성하기</button>
+						작성하기</button>
+					<form id='searchForm' action="/voc/list" method='get'>
+					 
+							<select name='type'>
+								<option value=""
+									<c:out value="${pageMaker.cri.type == null?'selected':''}"/>>--</option>
+								<option value="T"
+									<c:out value="${pageMaker.cri.type eq 'T' ?'selected':''}"/>>제목</option>
+								<option value="C"
+									<c:out value="${pageMaker.cri.type eq 'C' ?'selected':''}"/>>내용</option>
+								<option value="W"
+									<c:out value="${pageMaker.cri.type eq 'W' ?'selected':''}"/>>작성자</option>
+								<option value="TC"
+									<c:out value="${pageMaker.cri.type eq 'TC' ?'selected':''}"/>>제목 or 내용</option>
+								<option value="TW"
+									<c:out value="${pageMaker.cri.type eq 'TW' ?'selected':''}"/>>제목 or 작성자</option>
+								<option value="TWC"
+									<c:out value="${pageMaker.cri.type eq 'TWC' ?'selected':''}"/>>제목 or 내용 or 작성자</option>
+							</select> 
+							<input type='text' name='keyword' value='<c:out value="${pageMaker.cri.keyword }"/>'/> 
+							<input type='hidden'name='pageNum' value='<c:out value="${pageMaker.cri.pageNum }"/>'/> 
+							<input type='hidden' name='amount' value='<c:out value="${pageMaker.cri.amount }"/>'/>
+							
+							<button class='btn btn-default'>이전 글 검색</button>
+						</form>	
+					</div>
+				</div>
 			</div>
+		</div>
 			<!-- /.panel-heading -->
 			<div class="panel-body">
 				<table width="100%"
@@ -43,41 +123,20 @@
 					</c:forEach>
 				</table>
 
-				<div class='row'>
-					<div class='col-lg-12'>
+			<div class='row'>
+				<div class='col-lg-12'>
 
-						<form id='searchForm' action="/voc/list" method='get'>
-							<select name='type'>
-								<option value=""
-									<c:out value="${pageMaker.cri.type == null?'selected':''}"/>>--</option>
-								<option value="T"
-									<c:out value="${pageMaker.cri.type eq 'T' ?'selected':''}"/>>제목</option>
-								<option value="C"
-									<c:out value="${pageMaker.cri.type eq 'C' ?'selected':''}"/>>내용</option>
-								<option value="W"
-									<c:out value="${pageMaker.cri.type eq 'W' ?'selected':''}"/>>작성자</option>
-								<option value="TC"
-									<c:out value="${pageMaker.cri.type eq 'TC' ?'selected':''}"/>>제목 or 내용</option>
-								<option value="TW"
-									<c:out value="${pageMaker.cri.type eq 'TW' ?'selected':''}"/>>제목 or 작성자</option>
-								<option value="TWC"
-									<c:out value="${pageMaker.cri.type eq 'TWC' ?'selected':''}"/>>제목 or 내용 or 작성자</option>
-							</select> 
-							<input type='text' name='keyword' value='<c:out value="${pageMaker.cri.keyword }"/>'/> 
-							<input type='hidden'name='pageNum' value='<c:out value="${pageMaker.cri.pageNum }"/>'/> 
-							<input type='hidden' name='amount' value='<c:out value="${pageMaker.cri.amount }"/>'/>
-							<button class='btn btn-default'>찾기</button>
-						</form>
+					
 
-					</div>
 				</div>
+			</div>
 
-				<div class="pull-right">
-					<ul class="pagination">
+			<div class="pull-right">
+				<ul class="pagination">
 						
-						<c:if test="${pageMaker.prev }">
-							<li class="paginate_button previous"><a
-								href="${pageMaker.startPage -1 }">Previous</a></li>
+					<c:if test="${pageMaker.prev }">
+						<li class="paginate_button previous"><a
+							href="${pageMaker.startPage -1 }">Previous</a></li>
 						</c:if>
 
 						<c:forEach var="num" begin="${pageMaker.startPage }"
@@ -85,17 +144,17 @@
 							<li class="paginate_button ${pageMaker.cri.pageNum == num ? "active":"" }">
 								<a href="${num }">${num }</a>
 							</li>
-						</c:forEach>
+					</c:forEach>
 
-						<c:if test="${pageMaker.next }">
-							<li class="paginate_button next"><a
+					<c:if test="${pageMaker.next }">
+						<li class="paginate_button next"><a
 								href="${pageMaker.endPage +1 }">Next</a></li>
-						</c:if>
+					</c:if>
 
 					</ul>
 				</div>
 			</div>
-
+	</section>
 			<form id='actionForm' action="/voc/list" method='get'>
 				<input type='hidden' name='pageNum' value='${pageMaker.cri.pageNum }'> 
 				<input type='hidden' name='amount' value='${pageMaker.cri.amount }'>
@@ -199,7 +258,7 @@
 		});
 
 </script>
-<script>
+	<script>
 		$(document).ready(function() {
 		$('#dataTables-example').DataTable({ responsive: true});
 		$(".sidebar-nav")
