@@ -32,14 +32,14 @@
     
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Denta<span>Care</span></a>
+	      <a class="navbar-brand" href="/main">Denta<span>Care</span></a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+	          <li class="nav-item active"><a href="/main" class="nav-link">Home</a></li>
 	          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
 	          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
 	          <li class="nav-item"><a href="doctors.html" class="nav-link">Doctors</a></li>
@@ -85,7 +85,7 @@
       </div>
     </section>
 
-    <section class="ftco-intro">
+    <!-- <section class="ftco-intro">
     	<div class="container">
     		<div class="row no-gutters">
     			<div class="col-md-3 color-1 p-4">
@@ -167,7 +167,7 @@
     			</div>
     		</div>
     	</div>
-    </section>
+    </section> -->
   
     <section class="ftco-section ftco-services">
       <div class="container">
@@ -268,7 +268,7 @@
     </section>
 
 
-    <section class="ftco-section">
+<!--     <section class="ftco-section">
       <div class="container">
       	<div class="row justify-content-center mb-5 pb-5">
           <div class="col-md-7 text-center heading-section ftco-animate">
@@ -405,9 +405,9 @@
 		      </div>
 	      </div>
     	</div>
-    </section>
+    </section> -->
 
-    <section class="ftco-section">
+<!--     <section class="ftco-section">
     	<div class="container">
     		<div class="row justify-content-center mb-5 pb-5">
           <div class="col-md-7 text-center heading-section ftco-animate">
@@ -627,9 +627,9 @@
 					</div>
         </div>
     	</div>
-    </section>
+    </section> -->
 
-    <section class="ftco-section">
+<!--     <section class="ftco-section">
       <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 text-center heading-section ftco-animate">
@@ -688,9 +688,9 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 		
-		<section class="ftco-quote">
+<!-- 		<section class="ftco-quote">
     	<div class="container">
     		<div class="row">
     			<div class="col-md-6 pr-md-5 aside-stretch py-5 choose">
@@ -749,7 +749,7 @@
     	</div>
     </section>
 		
-		<div id="map"></div>
+		<div id="map"></div> -->
 
     <footer class="ftco-footer ftco-bg-dark ftco-section">
       <div class="container">
@@ -792,7 +792,7 @@
                 </div>
               </div>
               <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(/resources/images/image_2.jpg);"></a>
+                <a class="blog-img mr-4" style="background-image: url(/resources/images/good.png);"></a>
                 <div class="text">
                   <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
                   <div class="meta">
@@ -833,25 +833,7 @@
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
-<!-- modal 추가ㅣ -->
-                          	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-                          		aria-labelledby="myModalLabel" aria-hidden="true">
-                          		<div class="modal-dialog">
-                          			<div class="modal-content">
-                          				<div class="modal-header">
-                          					<button type="button" class="close" data-dismiss="modal"
-                          						aria-hidden="true">&times;</button>
-                          					<h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                          				</div>
-                          				<div class="modal-body">처리가 완료되었습니다.</div>
-                          				<div class="modal-footer">
-                          					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                          					<button type="button" class="btn btn-primary">Save Changes</button>
-                          				</div>
-                          			</div>
-                          		</div>
-                          	</div>
-                          	<!-- /.modal -->
+
 
 
    <!-- Modal -->
@@ -904,33 +886,25 @@
     </div>
   </div> -->
   
-  <script type="text/javascript">
-	$(function(){
-		var result = '<c:out value="${result}"/>';
-		
-		checkModal(result);
-		
-		history.replaceState({}, null, null);
-		
-		function checkModal(result)
-		{
-			if(result === '' || history.state)
-			{
-				return;			
-			}
-			
-			if(parseInt(result) > 0)
-			{
-				$(".modal-body").html("게시글 "+parseInt(result)+" 번이 등록되었습니다.");		
-			}
-			$("#myModal").modal("show");
-		}	
-		
-		$("#regBtn").on("click", function(){
-			self.location = "/rsv/register";
-		});
-	});
-</script>
+  <!-- modal 추가ㅣ -->
+                          	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+                          		aria-labelledby="myModalLabel" aria-hidden="true">
+                          		<div class="modal-dialog">
+                          			<div class="modal-content">
+                          				<div class="modal-header">
+                          					<button type="button" class="close" data-dismiss="modal"
+                          						aria-hidden="true">&times;</button>
+                          					<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                          				</div>
+                          				<div class="modal-body">처리가 완료되었습니다.</div>
+                          				<div class="modal-footer">
+                          					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          					<button type="button" class="btn btn-primary">Save Changes</button>
+                          				</div>
+                          			</div>
+                          		</div>
+                          	</div>
+                          	<!-- /.modal -->
 
 
   <script src="/resources/js/jquery.min.js"></script>
@@ -950,6 +924,77 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="/resources/js/google-map.js"></script>
   <script src="/resources/js/main.js"></script>
+
+<script type="text/javascript"> 
+	$(function(){
+		var result = '<c:out value="${result}"/>';
+		
+		checkModal(result);
+		
+		history.replaceState({}, null, null);
+		
+		function checkModal(result)
+		{
+			if(result === '' || history.state)
+			{
+				return;			
+			}
+			
+			if(parseInt(result) > 0)
+			{
+				$(".modal-body").html("게시글 "+parseInt(result)+" 번이 등록되었습니다.");		
+			}
+			$("#myModal").modal("show");
+			self.location = "/main";
+			
+		}	
+		
+		$("#regBtn").on("click", function(){
+			self.location = "/rsv/register";
+		});
+		
+		var actionForm = $('#actionForm');
+		
+		$(".paginate_button a").on("click", function(e){
+			e.preventDefault();
+			
+			console.log('click');
+			
+			actionForm.find("input[name='pageNum']").val($(this).attr("href"));
+			actionForm.submit();
+		});
+		
+		$(".move").on("click", function(e){
+			e.preventDefault();
+			actionForm.append("<input type='hidden' name='bno' value='"+$(this).attr("href")+"'>");
+			actionForm.attr("action", "/board/get");
+			actionForm.submit();
+		});
+		
+		var searchForm = $("#searchForm");
+		
+		$("#searchForm button").on("click", function(e){
+			if(!searchForm.find("option:selected").val()){
+				alert("검색종류를 선택하세요");
+				return false;
+			}
+			
+			if(!searchForm.find("input[name='keyword']").val()){
+				alert("키워드를 입력하세요");
+				return false;
+			}
+			
+			searchForm.find("input[name='pageNum']").val("1");
+			e.preventDefault();
+			
+			searchForm.submit();
+		});
+	});
+</script>
+  
+
+
+
     
   </body>
 </html>

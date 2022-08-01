@@ -18,8 +18,8 @@
 		 resultType="long">
 		  select seq_reservation.nextval from dual
 		 </selectKey>
-		 insert into reservation (reservation_number,member_id,reservation_sympton)
-		 values(#{reservation_number},#{member_id},#{reservation_sympton})
+		 insert into reservation (reservation_number,member_id, reservation_date, reservation_time, reservation_sympton)
+		 values(#{reservation_number},#{member_id}, #{reservation_date}, #{reservation_time}, #{reservation_sympton})
 		 
 	</insert>
 	
@@ -74,10 +74,11 @@
   					)
   				where rn > (#{pageNum}-1) * #{amount}
 
-  				order by reservation_number desc
+  				order by reservation_number asc
 
   				]]>
 	</select>
+					<!-- order by reservation_number desc -->
 	<select id="getTotalCount" resultType="int">
 		select count(*) from reservation
 		where 
@@ -98,7 +99,9 @@
 		reservation_sympton =
 		#{reservation_sympton},
 		reservation_date =
-		sysdate
+		#{reservation_date},
+		reservation_time =
+		#{reservation_time}
 		where reservation_number =
 		#{reservation_number}
 		

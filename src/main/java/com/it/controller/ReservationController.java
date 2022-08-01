@@ -75,18 +75,19 @@ public class ReservationController {
 	@GetMapping("/register")
 	@PreAuthorize("isAuthenticated()")
 	public void register() {
-/*		public void register(HttpServletRequest request, HttpServletResponse response, Model model) {*/
-/*		HttpSession session;
-		session=request.getSession();
-		session.setAttribute(name, value);
 		
-		session.setAttribute("side_menu", "user");*/
-
+/*		@GetMapping({"/get","/modify"})
+		public void get(@RequestParam("bno") Long bno, @ModelAttribute("cri") Criteria cri, Model model)
+		{
+			log.info("/get or modify");
+			model.addAttribute("board", service.get(bno));
+		}*/
+		
 	}
 
 	@PostMapping("/register")
 	@PreAuthorize("isAuthenticated()")
-	public String register(ReservationVO reservation, RedirectAttributes rttr) {
+	public String register(ReservationVO reservation, RedirectAttributes rttr, Model model) {
 
 		log.info("register:" + reservation);
 		rService.register(reservation);
@@ -94,8 +95,36 @@ public class ReservationController {
 		log.info("reservation_number: "+reservation.getReservation_number());
 		rttr.addFlashAttribute("result", reservation.getReservation_number());
 
-		return "redirect:/main";
+//		return "/main";
+		return "redirect:/rsv/list";
 	}
+	
+	@GetMapping({"/get", "/modify"})
+	public void get(@RequestParam("reservation_number") Long reservation_number, @ModelAttribute("cri") Criteria cri, Model model) {
+		log.info("/get or modify");
+		model.addAttribute("board", rService.get(reservation_number));
+	}
+	
+	//예약리스트 삭제
+	@PreAuthorize("principal.username == #reservation_number")
+	@GetMapping("/remove")
+		public String remove(Long reservation_number, Criteria cri) {
+		
+		rService.remove(reservation_number);
+		
+		return "redirect:/rsv/list";
+	}
+	
+	//예약리스트 수정
+	@PreAuthorize("principal.username == #member_id")
+	@PostMapping("/modify")
+	public String modify(ReservationVO reservation, Criteria cri ) {
+		rService.modify(reservation);
+		
+		return "redirect:/rsv/list";
+	}
+	
+	
 	
 }
 

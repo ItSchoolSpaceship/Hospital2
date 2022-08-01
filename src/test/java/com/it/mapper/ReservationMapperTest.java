@@ -41,7 +41,7 @@ public class ReservationMapperTest {
 		ReservationVO vo = new ReservationVO();
 		vo.setReservation_sympton("도형이형 개인주의다");
 		vo.setMember_id("고쳐줘");
-		vo.setReservation_date("2022-08-07");
+		vo.setReservation_date(new Date("2022-08-07"));
 		
 		mapper.insert(vo);
 	}

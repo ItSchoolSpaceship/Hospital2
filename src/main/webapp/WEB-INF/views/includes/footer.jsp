@@ -42,7 +42,7 @@
                 </div>
               </div>
               <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(/resources/images/image_2.jpg);"></a>
+                <a class="blog-img mr-4" style="background-image: url(/resources/images/good.png);"></a>
                 <div class="text">
                   <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
                   <div class="meta">

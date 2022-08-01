@@ -13,10 +13,10 @@ public class ReservationVO {
 	private Long reservation_number;
 	private String member_id;
 	
-	 @DateTimeFormat(pattern = "yyyy-MM-dd")
-	  private Date  reservation_date;
-	 
-	private Date reservation_time;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date  reservation_date;
+
+	private String reservation_time;
 	private String reservation_sympton;
 		
 	
