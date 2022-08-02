@@ -31,7 +31,12 @@
              <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }"/>
              	<div class="form-group" >
              		<label>아이디</label><input class="form-control1" name="member_id"
-	                        			value='<c:out value="kim" />' ">
+	                        			value=<sec:authentication property="principal.member.member_id"/> readonly="readonly">
+				</div>
+             	
+             	<div class="form-group" >
+             		<label>이름</label><input class="form-control1" name="member_name"
+	                        			value=<sec:authentication property="principal.member.member_name"/> readonly="readonly">
 				</div>
 				<!-- readonly="readonly -->
 				<br>

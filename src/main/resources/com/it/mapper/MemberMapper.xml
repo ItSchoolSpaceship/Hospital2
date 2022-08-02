@@ -48,20 +48,12 @@
 	</resultMap>
 	
 	<select id="read" resultMap="memberMap">
-<<<<<<< HEAD
-
-=======
->>>>>>> f3370c49a0175f6c4e3e58cc886365be7b215cf3
 SELECT
 	mem.member_id, member_pwd, member_name, enabled, authority, member_number, member_address, member_email, member_phone, member_birth
 FROM
 	member mem LEFT OUTER JOIN authorities auth on mem.member_id = auth.member_id
 WHERE
  	mem.member_id = #{member_id}
-<<<<<<< HEAD
-
-=======
->>>>>>> f3370c49a0175f6c4e3e58cc886365be7b215cf3
 	</select>
 	
 </mapper>
