@@ -8,6 +8,8 @@
 		http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 <!-- <bean id="customPasswordEncoder" class="com.it.security.CustomPasswordEncoder"></bean> -->
+
+<!-- 비밀번호 암호화 -->
 <bean id="customLoginSuccess" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
 <bean id="bcryptPasswordEncoder"
 		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
@@ -25,13 +27,14 @@
 
 <security:authentication-manager>
 	<security:authentication-provider>
-		<!-- <security:user-service>
+	<!-- <security:user-service>
 			<security:user name="member" password="{noop}member" authorities="ROLE_MEMBER"/>
 			<security:user name="admin" password="{noop}admin" authorities="ROLE_MEMBER, ROLE_ADMIN"/>
 		</security:user-service> -->
 	<security:jdbc-user-service data-source-ref="dataSource" users-by-username-query="select member_id, member_pwd, enabled from member where member_id = ? " 
 	authorities-by-username-query="select member_id, authority from authorities where member_id = ?"/> 
-		<!-- <security:password-encoder ref="customPasswordEncoder"/> -->
+<!-- 		<security:password-encoder ref="customPasswordEncoder"/> -->
+		<!-- 비밀번호 암호화 -->
 		<security:password-encoder ref="bcryptPasswordEncoder" />
 	</security:authentication-provider>
 </security:authentication-manager>

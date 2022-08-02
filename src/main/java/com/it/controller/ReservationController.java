@@ -61,6 +61,7 @@ public class ReservationController {
 	}*/
 
 	@GetMapping("/detailPage")
+	@PreAuthorize("isAuthenticated()")
 	public void detailPage(@RequestParam("member_id") String member_id, Model model) {
 		log.info("ID: " + member_id);
 		Map<String, Class> detailMap = new HashMap<String, Class>();
@@ -99,6 +100,8 @@ public class ReservationController {
 		return "redirect:/rsv/list";
 	}
 	
+	@PreAuthorize("isAuthenticated()")
+	/*@PreAuthorize("principal.username == #reservation_number")*/
 	@GetMapping({"/get", "/modify"})
 	public void get(@RequestParam("reservation_number") Long reservation_number, @ModelAttribute("cri") Criteria cri, Model model) {
 		log.info("/get or modify");

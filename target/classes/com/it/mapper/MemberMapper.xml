@@ -4,24 +4,6 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.it.mapper.MemberMapper">
 
-<!-- 	<select id="selectMember" resultMap=""   >
-	    <![CDATA[
-		select * from t_shopping_cart 
-		where member_id=#{member_id} 
-		]]>
-	</select> -->
-	
-	<select id="selectMember" resultType="com.it.domain.MemberVO">
-<!--      <![CDATA[-->
-          select g.* from member g
-          where g.member_id in
-<!--      ]]>-->
-           
-      <foreach item="item"  collection="list" open="(" separator="," close=")">
-        #{item.member_id}
-      </foreach>
- 	</select>
-
 	<insert id="insert">
 		insert into member (member_id, member_pwd, member_name, member_birth,
 		member_address, member_email, member_phone)
@@ -29,9 +11,9 @@
 		#{member_birth}, #{member_address}, #{member_email}, #{member_phone})
 	</insert>
 	
-	<select id="read" resultType="com.it.domain.MemberVO">
+	<!-- <select id="read" resultType="com.it.domain.MemberVO">
 		select * from member where member_id = #{member_id}
-	</select>
+	</select> -->
 	
 	<delete id="delete">
 		delete from member where member_number = #{member_number}
@@ -44,5 +26,32 @@
 		member_email = #{member_email}, member_phone = #{member_phone},
 		where member_number = #{member_number}
 	</update>
-
+	
+	<resultMap type="com.it.domain.MemberVO" id="memberMap">
+		<id property="member_id" column="member_id" />
+		<result property="member_id" column="member_id"/>
+		<result property="member_pwd"	column="member_pwd"/>
+		<result property="member_name" column="member_name"/>
+		<result property="member_address" column="member_address"/>
+		<result property="member_email" column="member_email"/>
+		<result property="member_phone" column="member_phone"/>
+		<result property="enabled" column="enabled"/>
+		<collection property="authList" resultMap="authMap">
+		</collection>
+	</resultMap>
+	
+	<resultMap type="com.it.domain.AuthVO" id="authMap">
+		<result property="member_id" column="member_id"/>
+		<result property="authority" column="authority"/>
+	</resultMap>
+	
+	<select id="read" resultMap="memberMap">
+SELECT 
+	mem.member_id, member_pwd, member_name, enabled, authority 
+FROM 
+	member mem LEFT OUTER JOIN authorities authority on mem.member_id = authority.member_id 
+WHERE 
+	mem.member_id = #{member_id}
+	</select>
+	
 </mapper>
