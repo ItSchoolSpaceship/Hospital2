@@ -14,6 +14,8 @@ public interface MemberMapper {
 	public void delete(MemberVO member);
 	
 	public MemberVO read(String member_id);
+
+	public MemberVO readID(String member_id);
 	
 	public List<MemberVO> selectMember(List<ReservationVO> reservation);
 

@@ -27,6 +27,10 @@ public class MemberServiceImpl {
 		return mapper.read(id);
 	}
 	
+	public MemberVO memberSelectID(String id) {
+		return mapper.readID(id);
+	}
+	
 	/*public void memberUpdate(MemberVO member) {
 		
 	}

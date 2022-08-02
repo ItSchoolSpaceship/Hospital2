@@ -49,7 +49,7 @@
 	          <li class="nav-item"><a href="doctors.html" class="nav-link">의료진</a></li>
 	          <li class="nav-item active"><a href="blog.html" class="nav-link">고객의 소리</a></li>
 	          <li class="nav-item"><a href="contact.html" class="nav-link">오시는길</a></li>
-	          <li class="nav-item cta"><a href="contact.html" class="nav-link" data-toggle="modal" data-target="#modalRequest"><span>Make an Appointment</span></a></li>
+	          <li class="nav-item cta"><a href="/rsv/register" class="nav-link" ><span>Make an Appointment</span></a></li>
 	        </ul>
 	      </div>
 	    </div>
@@ -61,7 +61,7 @@
           <div class="row slider-text align-items-end">
             <div class="col-md-7 col-sm-12 ftco-animate mb-5">
               <p class="breadcrumbs" data-scrollax=" properties: { translateY: '70%', opacity: 1.6}"><span class="mr-2"><a href="index.html">Home</a></span> </p>
-              <h1 class="mb-3" data-scrollax=" properties: { translateY: '70%', opacity: .9}">고객의 소리</h1>
+              <h1 class="mb-3" data-scrollax=" properties: { translateY: '70%', opacity: .9}">예 약</h1>
             </div>
           </div>
         </div>

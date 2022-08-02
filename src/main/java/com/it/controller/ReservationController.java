@@ -60,21 +60,22 @@ public class ReservationController {
 		model.addAttribute("detail", cartMap);
 	}*/
 
+	//예약 상세 페이지
 	@GetMapping("/detailPage")
-	@PreAuthorize("isAuthenticated()")
+//	@PreAuthorize("isAuthenticated()")
 	public void detailPage(@RequestParam("member_id") String member_id, Model model) {
 		log.info("ID: " + member_id);
 		Map<String, Class> detailMap = new HashMap<String, Class>();
 
 		ReservationVO rvo = rService.getID(member_id);
-		MemberVO mvo = mService.memberSelect(member_id);
+		MemberVO mvo = mService.memberSelectID(member_id);
 
 		model.addAttribute("reserv", rvo);
 		model.addAttribute("member", mvo);
 	}
 
 	@GetMapping("/register")
-	@PreAuthorize("isAuthenticated()")
+//	@PreAuthorize("isAuthenticated()")
 	public void register() {
 		
 /*		@GetMapping({"/get","/modify"})
@@ -87,7 +88,7 @@ public class ReservationController {
 	}
 
 	@PostMapping("/register")
-	@PreAuthorize("isAuthenticated()")
+//	@PreAuthorize("isAuthenticated()")
 	public String register(ReservationVO reservation, RedirectAttributes rttr, Model model) {
 
 		log.info("register:" + reservation);
@@ -100,7 +101,7 @@ public class ReservationController {
 		return "redirect:/rsv/list";
 	}
 	
-	@PreAuthorize("isAuthenticated()")
+//	@PreAuthorize("isAuthenticated()")
 	/*@PreAuthorize("principal.username == #reservation_number")*/
 	@GetMapping({"/get", "/modify"})
 	public void get(@RequestParam("reservation_number") Long reservation_number, @ModelAttribute("cri") Criteria cri, Model model) {
@@ -109,7 +110,7 @@ public class ReservationController {
 	}
 	
 	//예약리스트 삭제
-	@PreAuthorize("principal.username == #reservation_number")
+//	@PreAuthorize("principal.username == #reservation_number")
 	@GetMapping("/remove")
 		public String remove(Long reservation_number, Criteria cri) {
 		
@@ -119,7 +120,7 @@ public class ReservationController {
 	}
 	
 	//예약리스트 수정
-	@PreAuthorize("principal.username == #member_id")
+//	@PreAuthorize("principal.username == #member_id")
 	@PostMapping("/modify")
 	public String modify(ReservationVO reservation, Criteria cri ) {
 		rService.modify(reservation);

@@ -8,7 +8,6 @@
 	<sec:authentication property="principal" var="principal" />
 </sec:authorize>
 
-<!-- [출처] [Spring Security] #6 스프링부트 회원가입 및 로그인하기 - View 연결하기, 로그인 세션 정보 확인, Security taglibs|작성자 sosow0212 -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
 
 <%@include file="../includes/header.jsp" %>

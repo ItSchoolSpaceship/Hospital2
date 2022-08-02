@@ -25,8 +25,8 @@
 			<li>아이디 : ${reserv.member_id}</li>
 			<li>이름 : ${member.member_name}</li>
 			<li>전화번호 : ${member.member_phone}</li>
- 			<li>예약날짜 : <td><fmt:formatDate pattern="yyyy-MM-dd"
-						value="${reserv.reservation_date}"/></td></li>
+ 			<li>예약날짜 : <fmt:formatDate pattern="yyyy년 MM월 dd일"
+						value="${reserv.reservation_date}"/></li>
 			<li>시간 : ${reserv.reservation_time}</li>
 			<li>증상 : ${reserv.reservation_sympton}</li>
 		</ul>

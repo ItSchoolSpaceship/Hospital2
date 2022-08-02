@@ -29,7 +29,7 @@
 	                        	</div --%>>
 			
              <form role="form" action="/rsv/modify?reservation_number=${board.reservation_number }" method="post" align="center" >
-             <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }"/>
+			 <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }"/>
              	             	<div class="form-group" >
              		<label>아이디</label><input class="form-control1" name="member_id"
 	                        			value='<c:out value="${board.member_id }"/>' readonly="readonly">

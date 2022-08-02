@@ -11,9 +11,9 @@
 		#{member_birth}, #{member_address}, #{member_email}, #{member_phone})
 	</insert>
 	
-	<!-- <select id="read" resultType="com.it.domain.MemberVO">
+	<select id="readID" resultType="com.it.domain.MemberVO">
 		select * from member where member_id = #{member_id}
-	</select> -->
+	</select>
 	
 	<delete id="delete">
 		delete from member where member_number = #{member_number}
@@ -46,10 +46,11 @@
 	</resultMap>
 	
 	<select id="read" resultMap="memberMap">
+	<!-- mem.member_id, member_pwd, member_name, enabled, authority -->
 SELECT 
 	mem.member_id, member_pwd, member_name, enabled, authority 
 FROM 
-	member mem LEFT OUTER JOIN authorities authority on mem.member_id = authority.member_id 
+	member mem LEFT OUTER JOIN authorities auth on mem.member_id = auth.member_id 
 WHERE 
 	mem.member_id = #{member_id}
 	</select>
