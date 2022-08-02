@@ -181,7 +181,10 @@ svg:not(:root) {
   overflow: hidden; }
 
 table {
-  border-collapse: collapse; }
+  border-collapse: collapse; 
+  padding: 0.75rem;
+  vertical-align: top;
+  }
 
 caption {
   padding-top: 0.75rem;

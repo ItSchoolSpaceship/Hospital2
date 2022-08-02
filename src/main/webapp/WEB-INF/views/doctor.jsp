@@ -49,7 +49,7 @@
 	          <li class="nav-item active"><a href="http://localhost:9090/controller/doctor" class="nav-link">의료진</a></li>
 	          <li class="nav-item"><a href="blog.html" class="nav-link">고객의 소리</a></li>
 	          <li class="nav-item"><a href="http://localhost:9090/controller/map" class="nav-link">오시는 길</a></li>
-	          <li class="nav-item cta"><a href="contact.html" class="nav-link" data-toggle="modal" data-target="#modalRequest"><span>Make an Appointment</span></a></li>
+	          <li class="nav-item cta"><a href="contact.html" class="nav-link" data-toggle="modal" data-target="#modalRequest"><span>예약하기</span></a></li>
 	        </ul>
 	      </div>
 	    </div>
@@ -62,7 +62,7 @@
         <div class="container" data-scrollax-parent="true">
           <div class="row slider-text align-items-end">
             <div class="col-md-7 col-sm-12 ftco-animate mb-5">
-              <p class="breadcrumbs" data-scrollax=" properties: { translateY: '70%', opacity: 1.6}"><span class="mr-2"><a href="index.html">Home</a></span> <span>Services</span></p>
+              <p class="breadcrumbs" data-scrollax=" properties: { translateY: '70%', opacity: 1.6}"><span class="mr-2"></p>
               <h1 class="mb-3" data-scrollax=" properties: { translateY: '70%', opacity: .9}"> 최고의 의료진 </h1>
             </div>
           </div>
