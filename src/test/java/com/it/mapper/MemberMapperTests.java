@@ -23,7 +23,7 @@ public class MemberMapperTests {
 	public void insert() throws Exception{
 		MemberVO member = new MemberVO();
 		
-		member.setMember_id("test4");
+		member.setMember_id("tes");
 		member.setMember_pwd("test");
 		member.setMember_name("test");
 		member.setMember_address("test");
