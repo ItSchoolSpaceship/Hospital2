@@ -29,13 +29,15 @@
 	
 	<resultMap type="com.it.domain.MemberVO" id="memberMap">
 		<id property="member_id" column="member_id" />
+		
+		<!-- <result property="member_number" column="member_number"/> -->
 		<result property="member_id" column="member_id"/>
 		<result property="member_pwd"	column="member_pwd"/>
 		<result property="member_name" column="member_name"/>
 		<result property="member_address" column="member_address"/>
 		<result property="member_email" column="member_email"/>
 		<result property="member_phone" column="member_phone"/>
-		<result property="enabled" column="enabled"/>
+		<result property="member_birth" column="member_birth"/>
 		<collection property="authList" resultMap="authMap">
 		</collection>
 	</resultMap>
@@ -46,12 +48,12 @@
 	</resultMap>
 	
 	<select id="read" resultMap="memberMap">
-SELECT 
-	mem.member_id, member_pwd, member_name, enabled, authority 
-FROM 
-	member mem LEFT OUTER JOIN authorities authority on mem.member_id = authority.member_id 
-WHERE 
-	mem.member_id = #{member_id}
+SELECT
+	mem.member_id, member_pwd, member_name, enabled, authority, member_number, member_address, member_email, member_phone, member_birth
+FROM
+	member mem LEFT OUTER JOIN authorities auth on mem.member_id = auth.member_id
+WHERE
+ 	mem.member_id = #{member_id}
 	</select>
 	
 </mapper>
