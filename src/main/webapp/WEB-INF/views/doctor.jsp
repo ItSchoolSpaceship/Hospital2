@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -67,7 +70,7 @@
       </div>
     </section>
 		
-		<section class="ftco-section">
+	<section class="ftco-section">
       <div class="container">
       	<div class="row justify-content-center mb-5 pb-5">
           <div class="col-md-7 text-center heading-section ftco-animate">
@@ -114,7 +117,7 @@
         	</div>
         	<div class="col-lg-3 col-md-6 d-flex mb-sm-4 ftco-animate">
         		<div class="staff">
-      				<div class="img mb-4" style="background-image: url(images/person_7.jpg);"></div>
+      				<div class="img mb-4" style="background-image: url(/resources/images/person_4.jpg);"></div>
       				<div class="info text-center">
       					<h3><a href="teacher-single.html">강명인</a></h3>
       					<span class="position"> 치과의사 (임플란트 전문의)</span>
@@ -132,7 +135,7 @@
         	</div>
         	<div class="col-lg-3 col-md-6 d-flex mb-sm-4 ftco-animate">
         		<div class="staff">
-      				<div class="img mb-4" style="background-image: url(images/person_8.jpg);"></div>
+      				<div class="img mb-4" style="background-image: url(/resources/images/person_8.jpg);"></div>
       				<div class="info text-center">
       					<h3><a href="teacher-single.html">김기태</a></h3>
       					<span class="position">치과의사 (발치 전문의)</span>
@@ -150,7 +153,7 @@
         	</div>
         	<div class="col-lg-3 col-md-6 d-flex mb-sm-4 ftco-animate">
         		<div class="staff">
-      				<div class="img mb-4" style="background-image: url(images/person_1.jpg);"></div>
+      				<div class="img mb-4" style="background-image: url(/resources/images/person_1.jpg);"></div>
       				<div class="info text-center">
       					<h3><a href="teacher-single.html">임준묵</a></h3>
       					<span class="position">치과의사 (발치 전문의)</span>
@@ -168,7 +171,7 @@
         	</div>
         	<div class="col-lg-3 col-md-6 d-flex mb-sm-4 ftco-animate">
         		<div class="staff">
-      				<div class="img mb-4" style="background-image: url(images/person_2.jpg);"></div>
+      				<div class="img mb-4" style="background-image: url(/resources/images/person_2.jpg);"></div>
       				<div class="info text-center">
       					<h3><a href="teacher-single.html">차영준</a></h3>
       					<span class="position">치과의사 (신경치료 전문의)</span>
@@ -186,7 +189,7 @@
         	</div>
         	<div class="col-lg-3 col-md-6 d-flex mb-sm-4 ftco-animate">
         		<div class="staff">
-      				<div class="img mb-4" style="background-image: url(images/person_3.jpg);"></div>
+      				<div class="img mb-4" style="background-image: url(/resources/images/person_7.jpg);"></div>
       				<div class="info text-center">
       					<h3><a href="teacher-single.html">문채원</a></h3>
       					<span class="position">치과의사 (신경치료 전문의)</span>
@@ -204,7 +207,7 @@
         	</div>
         	<div class="col-lg-3 col-md-6 d-flex mb-sm-4 ftco-animate">
         		<div class="staff">
-      				<div class="img mb-4" style="background-image: url(images/person_4.jpg);"></div>
+      				<div class="img mb-4" style="background-image: url(/resources/images/person_3.jpg);"></div>
       				<div class="info text-center">
       					<h3><a href="teacher-single.html">손정대</a></h3>
       					<span class="position">자문 박사</span>
@@ -224,14 +227,13 @@
       </div>
     </section>
 
-
     <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_1.jpg);" data-stellar-background-ratio="0.5">
     	<div class="container">
     		<div class="row d-flex align-items-center">
     			<div class="col-md-3 aside-stretch py-5">
     				<div class=" heading-section heading-section-white ftco-animate pr-md-4">
-	            <h2 class="mb-3">Achievements</h2>
-	            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+	            <h2 class="mb-3">유나이티드 치과 업적</h2>
+	            <p> '고객'분들의 정확한 니즈를 파악하고 정직한'의료 서비스'를 제공하는게 우리의 목표입니다. </p>
 	          </div>
     			</div>
     			<div class="col-md-9 py-5 pl-md-5">
@@ -240,15 +242,15 @@
 		            <div class="block-18">
 		              <div class="text">
 		                <strong class="number" data-number="14">0</strong>
-		                <span>Years of Experience</span>
+		                <span>다 년간의 경험</span>
 		              </div>
 		            </div>
 		          </div>
 		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
 		            <div class="block-18">
 		              <div class="text">
-		                <strong class="number" data-number="4500">0</strong>
-		                <span>Qualified Dentist</span>
+		                <strong class="number" data-number="8">0</strong>
+		                <span>자격 있는 치과 의사</span>
 		              </div>
 		            </div>
 		          </div>
@@ -256,7 +258,7 @@
 		            <div class="block-18">
 		              <div class="text">
 		                <strong class="number" data-number="4200">0</strong>
-		                <span>Happy Smiling Customer</span>
+		                <span>행복한 미소 짓는 고객</span>
 		              </div>
 		            </div>
 		          </div>
@@ -264,7 +266,7 @@
 		            <div class="block-18">
 		              <div class="text">
 		                <strong class="number" data-number="320">0</strong>
-		                <span>Patients Per Year</span>
+		                <span>연간 환자 수</span>
 		              </div>
 		            </div>
 		          </div>
@@ -273,90 +275,12 @@
 	      </div>
     	</div>
     </section>
-
-    <section class="ftco-section">
-    	<div class="container">
-    		<div class="row justify-content-center mb-5 pb-5">
-          <div class="col-md-7 text-center heading-section ftco-animate">
-            <h2 class="mb-3">Our Best Pricing</h2>
-            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-          </div>
-        </div>
-    		<div class="row">
-        	<div class="col-md-3 ftco-animate">
-        		<div class="pricing-entry pb-5 text-center">
-        			<div>
-	        			<h3 class="mb-4">Basic</h3>
-	        			<p><span class="price">$24.50</span> <span class="per">/ session</span></p>
-	        		</div>
-        			<ul>
-        				<li>Diagnostic Services</li>
-								<li>Professional Consultation</li>
-								<li>Tooth Implants</li>
-								<li>Surgical Extractions</li>
-								<li>Teeth Whitening</li>
-        			</ul>
-        			<p class="button text-center"><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">Order now</a></p>
-        		</div>
-        	</div>
-        	<div class="col-md-3 ftco-animate">
-        		<div class="pricing-entry pb-5 text-center">
-        			<div>
-	        			<h3 class="mb-4">Standard</h3>
-	        			<p><span class="price">$34.50</span> <span class="per">/ session</span></p>
-	        		</div>
-        			<ul>
-        				<li>Diagnostic Services</li>
-								<li>Professional Consultation</li>
-								<li>Tooth Implants</li>
-								<li>Surgical Extractions</li>
-								<li>Teeth Whitening</li>
-        			</ul>
-        			<p class="button text-center"><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">Order now</a></p>
-        		</div>
-        	</div>
-        	<div class="col-md-3 ftco-animate">
-        		<div class="pricing-entry active pb-5 text-center">
-        			<div>
-	        			<h3 class="mb-4">Premium</h3>
-	        			<p><span class="price">$54.50</span> <span class="per">/ session</span></p>
-	        		</div>
-        			<ul>
-        				<li>Diagnostic Services</li>
-								<li>Professional Consultation</li>
-								<li>Tooth Implants</li>
-								<li>Surgical Extractions</li>
-								<li>Teeth Whitening</li>
-        			</ul>
-        			<p class="button text-center"><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">Order now</a></p>
-        		</div>
-        	</div>
-        	<div class="col-md-3 ftco-animate">
-        		<div class="pricing-entry pb-5 text-center">
-        			<div>
-	        			<h3 class="mb-4">Platinum</h3>
-	        			<p><span class="price">$89.50</span> <span class="per">/ session</span></p>
-	        		</div>
-        			<ul>
-        				<li>Diagnostic Services</li>
-								<li>Professional Consultation</li>
-								<li>Tooth Implants</li>
-								<li>Surgical Extractions</li>
-								<li>Teeth Whitening</li>
-        			</ul>
-        			<p class="button text-center"><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">Order now</a></p>
-        		</div>
-        	</div>
-        </div>
-    	</div>
-    </section>
-
-    <footer class="ftco-footer ftco-bg-dark ftco-section">
+<footer class="ftco-footer ftco-bg-dark ftco-section">
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-3">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2"> 유나이티드 치과 </h2>
+              <h2 class="ftco-heading-2">유나이티드 치과</h2>
               <p>우리는 최고의 치과 의사 연합으로 고객 분들에게 최상의 의료 혜택을 제공할 것을 약속합니다.</p>
             </div>
             <ul class="ftco-footer-social list-unstyled float-md-left float-lft ">
@@ -379,22 +303,26 @@
           </div>
           <div class="col-md-4 pr-md-4">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">수상 내역</h2>
+              <h2 class="ftco-heading-2">수상내역</h2>
               <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(images/good_1.jpg);"></a>
+                <a class="blog-img mr-4" style="background-image: url(/resources/images/good_1.png);"></a>
                 <div class="text">
-                  <h3 class="heading"><a href="#"> 보건복지부 선정 인증 의료기관 </a></h3>
+                  <h3 class="heading"><a href="#">보건복지부 선정 인증 의료기관</a></h3>
                   <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> Sept 15, 2021 </a></div>
+                    <div><a href="#"><span class="icon-calendar"></span> Sept 15, 2018</a></div>
+                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
                   </div>
                 </div>
               </div>
               <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(images/good_2.jpg);"></a>
+                <a class="blog-img mr-4" style="background-image: url(/resources/images/good_2.jpg);"></a>
                 <div class="text">
-                  <h3 class="heading"><a href="#"> 대한치과협회 선정 "우수 의료기관"수상 </a></h3>
+                  <h3 class="heading"><a href="#">대한치과협회 선정 "우수 의료기관"수상</a></h3>
                   <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> Nove 9, 2021 </a></div>
+                    <div><a href="#"><span class="icon-calendar"></span> Sept 15, 2018</a></div>
+                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
                   </div>
                 </div>
               </div>
@@ -405,8 +333,8 @@
             	<h2 class="ftco-heading-2">병원정보</h2>
             	<div class="block-23 mb-3">
 	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">대전시 서구 계룡로 637, 정일빌딩7층 </span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text"> 042) 213 - 4567 </span></a></li>
+	                <li><span class="icon icon-map-marker"></span><span class="text">대전시 서구 계룡로 637, 정일빌딩7층</span></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">042) 213 - 4567</span></a></li>
 	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@unitedc.com</span></a></li>
 	              </ul>
 	            </div>
@@ -416,83 +344,29 @@
         <div class="row">
           <div class="col-md-12 text-center">
 
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+           <p>
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</p>
+  
           </div>
         </div>
       </div>
-    </footer>
-    
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
-  <!-- Modal -->
-  <div class="modal fade" id="modalRequest" tabindex="-1" role="dialog" aria-labelledby="modalRequestLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalRequestLabel">Make an Appointment</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form action="#">
-            <div class="form-group">
-              <!-- <label for="appointment_name" class="text-black">Full Name</label> -->
-              <input type="text" class="form-control" id="appointment_name" placeholder="Full Name">
-            </div>
-            <div class="form-group">
-              <!-- <label for="appointment_email" class="text-black">Email</label> -->
-              <input type="text" class="form-control" id="appointment_email" placeholder="Email">
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <!-- <label for="appointment_date" class="text-black">Date</label> -->
-                  <input type="text" class="form-control appointment_date" placeholder="Date">
-                </div>    
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <!-- <label for="appointment_time" class="text-black">Time</label> -->
-                  <input type="text" class="form-control appointment_time" placeholder="Time">
-                </div>
-              </div>
-            </div>
-            
-
-            <div class="form-group">
-              <!-- <label for="appointment_message" class="text-black">Message</label> -->
-              <textarea name="" id="appointment_message" class="form-control" cols="30" rows="10" placeholder="Message"></textarea>
-            </div>
-            <div class="form-group">
-              <input type="submit" value="Make an Appointment" class="btn btn-primary">
-            </div>
-          </form>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-
-  <script src="resources/js/jquery.min.js"></script>
-  <script src="resources/js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="resources/js/popper.min.js"></script>
-  <script src="resources/js/bootstrap.min.js"></script>
-  <script src="resources/js/jquery.easing.1.3.js"></script>
-  <script src="resources/js/jquery.waypoints.min.js"></script>
-  <script src="resources/js/jquery.stellar.min.js"></script>
-  <script src="resources/js/owl.carousel.min.js"></script>
-  <script src="resources/js/jquery.magnific-popup.min.js"></script>
-  <script src="resources/js/aos.js"></script>
-  <script src="resources/js/jquery.animateNumber.min.js"></script>
-  <script src="resources/js/bootstrap-datepicker.js"></script>
-  <script src="resources/js/jquery.timepicker.min.js"></script>
-  <script src="resources/js/scrollax.min.js"></script>
-  <script src="resources/js/google-map.js"></script>
-  <script src="resources/js/main.js"></script>
-    
-  </body>
+      </footer>
+      
+      <script src="/resources/js/jquery.min.js"></script>
+  <script src="/resources/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="/resources/js/popper.min.js"></script>
+  <script src="/resources/js/bootstrap.min.js"></script>
+  <script src="/resources/js/jquery.easing.1.3.js"></script>
+  <script src="/resources/js/jquery.waypoints.min.js"></script>
+  <script src="/resources/js/jquery.stellar.min.js"></script>
+  <script src="/resources/js/owl.carousel.min.js"></script>
+  <script src="/resources/js/jquery.magnific-popup.min.js"></script>
+  <script src="/resources/js/aos.js"></script>
+  <script src="/resources/js/jquery.animateNumber.min.js"></script>
+  <script src="/resources/js/bootstrap-datepicker.js"></script>
+  <script src="/resources/js/jquery.timepicker.min.js"></script>
+  <script src="/resources/js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="/resources/js/google-map.js"></script>
+  <script src="/resources/js/main.js"></script>
 </html>

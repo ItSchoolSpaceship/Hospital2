@@ -15,7 +15,6 @@ import lombok.extern.log4j.Log4j;
 
 
 @Controller
-@RequestMapping("/member/*")
 @Log4j
 public class MemberContoroller {
 	
@@ -24,9 +23,13 @@ public class MemberContoroller {
 	//로그인 페이지 이동
 	@GetMapping("/login")
 	public void login() {
-		
 	}
 	
+	@GetMapping("/customLogin")
+	public void login2() {
+		
+	}
+
 	//회원가입 페이지 이동
 	@GetMapping("/join")
 	public void loginGet() {

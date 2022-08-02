@@ -49,9 +49,8 @@ public class QnaController {
 		
 		log.info("modify:" + qna);
 		
-		if(service.modify(qna)) {
-			rttr.addFlashAttribute("result","success");
-		}
+		service.modify(qna);
+		
 		
 		return "redirect:/qua/list";
 	}

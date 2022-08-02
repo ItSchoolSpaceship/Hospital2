@@ -5,10 +5,11 @@
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <%@ include file="../includes/header.jsp"%>
 
+
 <div class="row">
 	<div class="col-lg-12">
 		<div class="panel panel-default">
-			<div class="panel-heading">고객의 소리함</div>
+			<div class="panel-heading">고객의 소리</div>
 			<div class="panel-body">
 				<form role="form" action="/voc/register" method="post">
 				<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
