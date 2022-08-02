@@ -11,6 +11,8 @@
 <h1>회원가입 페이지 입니다.</h1>
 
 <form action="/member/join" method="post">
+	<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }"/>
+
 <table>
 	<tr>
 		<th>아이디</th>
@@ -21,16 +23,8 @@
 		<td><input type="password" name="member_pwd"></td>
 	</tr>
 	<tr>
-		<th>비밀번호 확인</th>
-		<td><input type="password" name="pwd"></td>
-	</tr>
-	<tr>
 		<th>이름</th>
 		<td><input type="text" name="member_name"></td>
-	</tr>
-	<tr>
-		<th>생년월일</th>
-		<td><input type="text" name="member_birth"></td>
 	</tr>
 	<tr>
 		<th>주소</th>
