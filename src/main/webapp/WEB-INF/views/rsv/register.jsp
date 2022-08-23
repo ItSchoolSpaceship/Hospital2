@@ -25,7 +25,7 @@
 <%-- 			<div class="form-group">
 	                        		<label>Bno</label><input class="form-control" name="bno"
 	                        			value='<c:out value="${board.bno}"/>' readonly="readonly">
-	                        	</div --%>>
+	                        	</div --%>
 			
              <form role="form" action="/rsv/register" method="post" align="center" >
              <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }"/>

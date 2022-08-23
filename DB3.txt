@@ -4,6 +4,7 @@ drop table qna;
 drop table reservation;
 drop table board;
 drop table reply;
+drop table authorities;
 
 --시퀀스 삭제
 drop sequence seq_member;
@@ -12,27 +13,34 @@ drop sequence seq_reservation;
 drop sequence seq_board;
 drop sequence seq_reply;
 
+---------------------------------------------------------------------------------------------------
+
 --회원 테이블 
 create table member(
    	member_id varchar2(20) primary key,
-	member_pwd varchar2(20) not null,
+	member_pwd varchar2(80) not null,
 	member_name varchar2(20) not null,
 	member_birth date ,
 	member_address varchar2(50),
+	member_postcode varchar2(50),
+	member_detailAddress varchar2(50),
+	member_extraAddress varchar2(50),
 	member_email varchar2(50),
 	member_phone varchar2(20),
-        	member_number number
+    	member_number number,
+    	enabled char(1) default '1' not null
 );
-
-alter table member add authority varchar2(20) default 'ROLE_MEMBER' not null;
-alter table member add enabled char(1) default '1' not null;
 
 create sequence seq_member;
 
-insert into member (member_id,member_pwd,member_name,authority,enabled) 
-values('admin','admin','관리자','ROLE_ADMIN','0');
-insert into member member (member_id,member_pwd,member_name,member_birth,member_address,member_email,member_phone)
-values('test','test','김기태','22-01-01','용문역','w3w3w3@naver.com','010-1111-1111');
+create table authorities (
+member_id varchar2(20) not null,
+authority varchar2(20) not null,
+constraint fk_authorities_member foreign key(member_id) references member(member_id));
+
+--회원 테이블의 아이디 생성은 test폴더 내 멤버테스트 2개 돌려야함
+
+---------------------------------------------------------------------------------------------------
 
 --qna 테이블 
 create table qna(
@@ -46,6 +54,9 @@ create table qna(
 create sequence seq_qna;
 
 alter table qna add constraint pk_qna primary key(qna_number);
+alter table qna add constraint fk_board foreign key (member_id) references member (member_id);
+
+------------------------------------------------------------------------------------------------
 
 --예약 테이블 
 create table reservation(
@@ -59,6 +70,9 @@ create table reservation(
 create sequence seq_reservation;
 
 alter table reservation add constraint pk_reservation primary key(reservation_number);
+alter table reservation add constraint fk_reservation foreign key (member_id) references member (member_id);
+
+-----------------------------------------------------------------------------------------------------
 
 -- 게시판 테이블 
 create table board(
@@ -74,6 +88,9 @@ create table board(
 create sequence seq_board;
 
 alter table board add constraint pk_board primary key(board_number);
+alter table board add constraint fk_board foreign key (member_id) references member (member_id);
+
+---------------------------------------------------------------------------------------------------
 
 -- 리플 테이블
 create table reply(
@@ -88,5 +105,7 @@ create table reply(
 create sequence seq_reply;
 
 alter table reply add constraint pk_reply primary key(reply_number);
-
 alter table reply add constraint fk_reply_board foreign key (board_number) references board(board_number);
+
+commit;
+

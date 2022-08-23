@@ -28,7 +28,7 @@ public class MemberContoroller {
 	@PostMapping("/member/join")
 	public String logindo(MemberVO member) {
 		service.memberInsert(member);
-		return "redirect:/voc/list";
+		return "redirect:main";
 	}
 	
 	//권한없음
@@ -38,10 +38,10 @@ public class MemberContoroller {
 		
 	}
 	
-	@GetMapping("/logout")
+	@PostMapping("/logout")
 	public String logout() {
 		log.info("logout");
-		return "home";
+		return "main";
 	}
 	
 	
